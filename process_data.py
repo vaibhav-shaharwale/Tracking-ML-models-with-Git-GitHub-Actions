@@ -4,12 +4,12 @@ df = pd.read_csv("data_raw.csv")
 
 all_features = df.columns
 
-# Let's drop some features
+# drop some features
 names = [feat for feat in all_features if "net_name" in feat] # excluded for privacy reasons
 useless = ["info_gew","info_resul","interviewtime","id","date"] # features that we expect are uninformative
 drop_list = names + useless 
 
-# Remove the questionnaire about agricultural practices until I can better understand it
+# Remove the questionnaire about agricultural practices 
 practice_list = ["legum","conc","add","lact","breed","covman","comp","drag","cov","plow","solar","biog","ecodr"]
 for feat in all_features:
     if any(x in feat for x in practice_list):
