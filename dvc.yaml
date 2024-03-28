@@ -4,21 +4,19 @@ stages:
     deps:
     - get_data.py
     outs:
-    - data_raw.csv
-  
-  process_data:
+    - data_raw.csv  
+  process:
     cmd: python process_data.py
     deps:
-    - data_raw.csv
     - process_data.py
+    - data_raw.csv
     outs:
     - data_processed.csv
-
   train:
     cmd: python train.py
     deps:
-    - data_processed.csv
     - train.py
+    - data_processed.csv
     outs:
     - by_region.png
     metrics:

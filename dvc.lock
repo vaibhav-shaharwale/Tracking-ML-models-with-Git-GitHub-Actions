@@ -48,3 +48,19 @@ stages:
       hash: md5
       md5: f4844c28505568f336c5f91db3f1beb3
       size: 89
+  process:
+    cmd: python process_data.py
+    deps:
+    - path: data_raw.csv
+      hash: md5
+      md5: b427a8c0156e79f12e418b08cde43c7e
+      size: 68868
+    - path: process_data.py
+      hash: md5
+      md5: a50398f7a68734db7f26d576467d346b
+      size: 886
+    outs:
+    - path: data_processed.csv
+      hash: md5
+      md5: 67eaf9825502936004bf7caad92a9e52
+      size: 24333
