@@ -3,4 +3,3 @@ scikit-learn
 pandas
 seaborn
 matplotlib
-dvc==3.43.0
